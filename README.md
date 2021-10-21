@@ -20,8 +20,8 @@ Java Processing Astrorun Indie Game
 
 ### How to play
 
-  To move in the menu and even in the game the only keys you need are the arrow keys, space bar and enter.
-  The main objetive is to dodge the falling meteors and get the most amount of points by staying alive.
+  To move in the menu and even in the game the only keys you need are the *arrow keys*, *space bar* and *enter*.
+  The *main objetive is to dodge the falling meteors and get the most amount of points by staying alive*.
 
 
 ### Main charts of code
