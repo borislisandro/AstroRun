@@ -27,7 +27,8 @@ The main objetive is to dodge the falling meteors and get the most amount of poi
 
 #These classes are just examples of what type of information some of the objects in this game might have. The following examples are for *ASTRO* the main caracter and the meteor that try to hit him.
 
-``class ASTRO {
+```
+class ASTRO {
   private float x,xspeed;
   float x_hitbox,y_hitbox_1,y_hitbox_2,y_hitbox_3, radius_1, radius_2,radius_3;
   
@@ -64,9 +65,11 @@ The main objetive is to dodge the falling meteors and get the most amount of poi
     y_hitbox_2=y_const+75;
     y_hitbox_3=y_const+112;
   }
-}``
+}
+```
 
-``class METEOR{
+```
+class METEOR{
   private float x, y, yspeed, size;
   
   float x_hitbox,y_hitbox,y_hitbox2,y_hitbox3,radius,radius2,radius3;
@@ -89,7 +92,8 @@ The main objetive is to dodge the falling meteors and get the most amount of poi
     radius=size*50;
     radius2=radius/2.3;
     radius3= radius/3;
-  }``
+  }
+  ```
   
   
 ### Developing team
