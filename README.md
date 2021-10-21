@@ -7,7 +7,7 @@ Me and my colleges did this indie game in about 1 month, obviously not full time
 
 ### How to use
 
-Since this is just a project we didn´t release a full executable file, so in order to play the game you need to download Processing [here](https://processing.org/download) and a certain sound library.
+Since this is just a project, we didn´t release a full executable file, so in order to play the game you need to download Processing [here](https://processing.org/download) and a certain sound library.
 
 Install sound processing library guide:
 ![1](https://user-images.githubusercontent.com/92954277/138365643-f804c2a5-60bf-4bba-a25c-1a7155832b35.png)
@@ -15,13 +15,6 @@ Install sound processing library guide:
 ![2](https://user-images.githubusercontent.com/92954277/138365799-4790e808-021f-4b5b-b586-01707329bf14.png)
 
 If you have questions or problems using the library, the best place for help is the [Processing Discourse](https://discourse.processing.org/). 
-
-
-### Developing team
-
-* Boris Teixeira 
-* Francisco Heleno
-* Filipe Silva
 
 
 ### How to play
@@ -34,7 +27,7 @@ The main objetive is to dodge the falling meteors and get the most amount of poi
 
 #These classes are just examples of what type of information some of the objects in this game might have. The following examples are for *ASTRO* the main caracter and the meteor that try to hit him.
 
-"class ASTRO {
+``class ASTRO {
   private float x,xspeed;
   float x_hitbox,y_hitbox_1,y_hitbox_2,y_hitbox_3, radius_1, radius_2,radius_3;
   
@@ -71,9 +64,9 @@ The main objetive is to dodge the falling meteors and get the most amount of poi
     y_hitbox_2=y_const+75;
     y_hitbox_3=y_const+112;
   }
-}"
+}``
 
-"class METEOR{
+``class METEOR{
   private float x, y, yspeed, size;
   
   float x_hitbox,y_hitbox,y_hitbox2,y_hitbox3,radius,radius2,radius3;
@@ -96,6 +89,11 @@ The main objetive is to dodge the falling meteors and get the most amount of poi
     radius=size*50;
     radius2=radius/2.3;
     radius3= radius/3;
-  }"
+  }``
   
   
+### Developing team
+
+* Boris Teixeira 
+* Francisco Heleno
+* Filipe Silva
