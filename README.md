@@ -10,6 +10,7 @@ Java Processing Astrorun Indie Game
   Since this is just a project, we didn´t release a full executable file, so in order to play the game you need to download Processing [here](https://processing.org/download) and a certain sound library.
 
   Install sound processing library guide:
+  
 ![1](https://user-images.githubusercontent.com/92954277/138365643-f804c2a5-60bf-4bba-a25c-1a7155832b35.png)
 
 ![2](https://user-images.githubusercontent.com/92954277/138365799-4790e808-021f-4b5b-b586-01707329bf14.png)
