@@ -96,7 +96,7 @@ class METEOR{
   }
   ```
   
-  Since the essense of the game is to dodge all the falling meteors the most important algorithm is what we call the colision checker, this funcion went through the array of objects called meteors and checked their individual position to compare to the main caraters's one, if any collision was detected the game would go to a death screen.
+  Since the essense of the game is to dodge all the falling meteors the most important algorithm is what we call the colision checker, this funcion goes through the array of objects called meteors and checks their individual position and compares to the main caraters's one, if any collision is detected the game would finish.
   The code seeems complicated but it uses a very simple algorithm that calculates the distances of the hitboxes. Keep in mind that each hitbox was done with circles in order to simplify it.
 
 
