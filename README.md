@@ -164,7 +164,7 @@ All the code can be used freely.
 *Have a good one.*
 
 
-RAW CODE:
+RAW CODE (comments and varibles are most likely to be in portuguese):
 ```
 import java.util.Random;
 import java.util.Arrays;
