@@ -145,7 +145,7 @@ void colisionChecker() { // FUNÇÃO DE DETEÇÃO DE COLISÃO
 * Ingame menu
 * Diferent variety of caracters to choose from
 * Volume mute buttom and bar
-* Coin system (collet in game in order to obtain more points)
+* Coin system (collect in game in order to obtain more points)
 * Scoreboard with sorting algorithm ( scores and respective names are exported to a .txt file )
 
 ### Conclusion
