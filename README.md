@@ -171,11 +171,15 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import processing.sound.*;
 import processing.serial.*;
+import java.io.File;
+import java.util.*; 
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 Random ran = new Random();
 
 //---Opções----------------
-boolean show_hitboxes = true;
+boolean show_hitboxes = false;
 int n_meteoros= 3; //
 //-------------------------
 
@@ -198,8 +202,15 @@ PFont font;
 SoundFile file;
 
 PImage bg_option;
+String[] linhas;
+String[] linhas_2;
+String linhas_3[];
+String nome_temp;
 
-PLAYER[] players = new PLAYER[100];
+PrintWriter output;
+
+
+PLAYER[] players = new PLAYER[10000];
 COIN[] coins = new COIN[10];
 METEOR[] meteor = new METEOR[200];
 
@@ -209,17 +220,11 @@ String temp= "", temp2="",temp3="";
 char mute;
 
 static final float y_const= 620; 
-boolean start= false, selected= false, menuconfig= false, ask_name= false,death_screen = false,askname_2players = false,start_2 = false,pause_game = false, select_pause = false,volume_option = false,select_menu_config = false,music = true;
+boolean start= false, selected= false, menuconfig= false, ask_name= false,death_screen = false,askname_2players = false,start_2 = false,pause_game = false, select_pause = false,volume_option = false,select_menu_config = false,music = true, load_player = true,verif=false,ver_add_file = true;
 
-int option= 1, option_char= 0, cont_pessoas= 3,temp_n_meteoros=n_meteoros,ver = 0,ver_1=0,opcao = 0, option_ambient = 0, nivel = 0, on_off= 0,opcao_menu = 1,cont_pessoas_2=3, volume = 5, char_selected = 0,bg_selected = 1,n_coins = 0, astromov = 0, astrodance = 0,temp_char=0,conf_char=0,conf_ambient=0;
+int option= 1, option_char= 0, cont_pessoas= 0,temp_n_meteoros=n_meteoros,ver = 0,ver_1=0,opcao = 0, option_ambient = 0, nivel = 0, on_off= 0,opcao_menu = 1,cont_pessoas_2=0, volume = 5, char_selected = 0,bg_selected = 1,n_coins = 0, astromov = 0, astrodance = 0,temp_char=0,conf_char=0,conf_ambient=0,pontuacao_temp,linhas_cont = 0,cont_pessoas_in_file=0;
 
 void setup() { // SÓ CORRE 1 VEZ
-  players[0]=new PLAYER("Boris\n");
-  players[1]=new PLAYER("Francisco\n");
-  players[2]=new PLAYER("Filipe\n");
-  players[0].pontuacao =3950;
-  players[1].pontuacao = 10200;
-  players[2].pontuacao = 7950;
   size(1024,768);//resolução
   frameRate(60);//fps
   
@@ -279,9 +284,38 @@ void setup() { // SÓ CORRE 1 VEZ
 
   character = new ASTRO(); // character 1
   generate_meteor(); // chama a função generate_meteor, que enche/substitui o array de meteoros com novos
+  
+  linhas = loadStrings("data\\leaderboard.txt");
+  for(int i = 0; i < linhas.length; i++){
+    if (i % 2 == 0){
+      nome_temp = linhas[i];
+    }
+    else {
+      pontuacao_temp =Integer.parseInt(linhas[i]);
+      verif = true;
+    }
+    if(verif){
+     players[cont_pessoas]=new PLAYER(nome_temp+"\n");
+     players[cont_pessoas].pontuacao = pontuacao_temp ;
+     cont_pessoas++;
+     cont_pessoas_2++;
+     cont_pessoas_in_file++;
+     nome_temp = "";
+     pontuacao_temp = 0;
+     verif = false;
+    }
+  }
 }
 
 void draw() {// LOOP  INFINITO
+   output = createWriter("data\\leaderboard.txt");
+   for(int i = 0; i < cont_pessoas_2 ; i++){
+     output.print(players[i].nome);
+     output.println(players[i].pontuacao);
+   }
+   output.close();
+
+
 if(music== true){
   if(volume == 0)
     file.amp(0);
@@ -455,6 +489,7 @@ if(music== true){
       }
     }
     else if(ask_name == true && death_screen == false){
+      ver_add_file = true;
       background(bg[5]);
       image(arrow,237,650,arrow.width*0.2,arrow.height*0.2);
       image(space,557,650,space.width*0.2,space.height*0.2);
@@ -660,7 +695,7 @@ void keyPressed() {
          if(character.x != -2){
          moveLeft = true;
          astromov++;
-          if(astromov < 6)
+          if(astromov < 3)
            astro_image= ar1[option_char];// DÁ LOAD A IMAGEM DO BONECO A ANDAR PARA A ESQUERDA
          if(astromov < 12 && astromov >= 6)
            astro_image= am_l[option_char];
@@ -678,7 +713,7 @@ void keyPressed() {
          if(character.x != 946){
          moveRight = true;
          astromov++;
-          if(astromov < 6)
+          if(astromov < 3)
            astro_image= al1[option_char];// DÁ LOAD A IMAGEM DO BONECO A ANDAR PARA A ESQUERDA
          if(astromov < 12 && astromov >= 6)
            astro_image= am_r[option_char];
@@ -697,6 +732,13 @@ void keyPressed() {
     else if( key == ' '){
       pause_game = true; 
     }
+    else if(key == 'h'){
+        show_hitboxes = true;
+    }
+    else if(key == 'j'){
+        show_hitboxes = false;
+    }
+
   }
   else if(start == true && pause_game == true && menuconfig == false && ask_name == false && death_screen == false && volume_option == false){ // LEITURA DE COMANDOS NO JOGO
       if (key == CODED) {
@@ -929,7 +971,6 @@ void reset() {
  temp_n_meteoros = n_meteoros;
 }
 
-  
 
 static boolean moveLeft= false, moveRight = false;
 static boolean moveLeft_2= false, moveRight_2 = false;
@@ -1077,7 +1118,7 @@ class COIN{
 
 
 class PLAYER{
-  String nome;
+  public String nome;
   public int pontuacao;
   
   PLAYER(String nome_in) {
@@ -1093,6 +1134,7 @@ class PLAYER{
     return pontuacao;
   }
 }
+  
   
   
 ```
