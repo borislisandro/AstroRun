@@ -1,6 +1,6 @@
-# Space Dodge
+# AstroRun
 
-Space Dodge is an exciting space-themed arcade game where players control an astronaut and must avoid incoming meteors while collecting coins to increase their score. The game includes multiple levels, each increasing in difficulty.
+AstroRun is an exciting space-themed arcade game where players control an astronaut and must avoid incoming meteors while collecting coins to increase their score. The game includes multiple levels, each increasing in difficulty.
 
 ## Features
 
@@ -20,12 +20,12 @@ Space Dodge is an exciting space-themed arcade game where players control an ast
    - Open your terminal or command prompt.
    - Clone the repository using the following command:
      ```
-     git clone https://github.com/yourusername/space-dodge.git
+     git clone https://github.com/borislisandro/AstroRun
      ```
 
 3. **Open the Project in Processing:**
    - Launch Processing.
-   - Open the `space-dodge` folder and then open the main `.pde` file.
+   - Open the `AstroRun` folder and then open the main `.pde` file.
 
 4. **Add Sound Library:**
    - In Processing, go to `Sketch -> Import Library -> Add Library...`.
@@ -50,29 +50,11 @@ Space Dodge is an exciting space-themed arcade game where players control an ast
 ## Customization
 
 ### Characters
-
 - You can customize your character by selecting from different astronaut images.
 - Add new character images to the `data` folder and update the code to include them.
 
 ### Backgrounds
-
 - Choose from multiple backgrounds in the settings menu.
 - Add new background images to the `data` folder and update the code to include them.
 
-## Contributing
-
-Contributions are welcome! If you have suggestions for improvements or new features, feel free to fork the repository and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Credits
-
-- Developed by [Your Name]
-- Thanks to the Processing community for their support and resources.
-
----
-
-Enjoy playing Space Dodge and aim for the highest score!
 
