@@ -47,14 +47,3 @@ AstroRun is an exciting space-themed arcade game where players control an astron
    - Collect coins to increase your score.
    - The game becomes more challenging as you progress through higher levels.
 
-## Customization
-
-### Characters
-- You can customize your character by selecting from different astronaut images.
-- Add new character images to the `data` folder and update the code to include them.
-
-### Backgrounds
-- Choose from multiple backgrounds in the settings menu.
-- Add new background images to the `data` folder and update the code to include them.
-
-
