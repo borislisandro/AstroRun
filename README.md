@@ -1,105 +1,78 @@
-```markdown
-# Space Game with Processing
+# Space Dodge
 
-This project is a space-themed game built using the Processing framework. Players can control an astronaut to avoid meteors and collect coins. The game features a main menu, configuration settings, and a high score system.
-
-## Table of Contents
-- [Features](#features)
-- [Hardware Requirements](#hardware-requirements)
-- [Software Requirements](#software-requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Code Overview](#code-overview)
-- [Classes Overview](#classes-overview)
-- [License](#license)
+Space Dodge is an exciting space-themed arcade game where players control an astronaut and must avoid incoming meteors while collecting coins to increase their score. The game includes multiple levels, each increasing in difficulty.
 
 ## Features
-- Main menu with options to start the game and configure settings
-- Character selection and background customization
-- Real-time score tracking and high score display
-- Pause and resume functionality
-- Music control (mute/unmute)
-- Collision detection with meteors and coins
-- Increasing difficulty levels
 
-## Hardware Requirements
-- Computer with a modern operating system
-- Keyboard for controlling the game
-
-## Software Requirements
-- [Processing](https://processing.org/download/) (version 3.5.4 or later)
-- Java Development Kit (JDK) if not bundled with Processing
+- **Single Player Mode:** Control an astronaut, avoid meteors, and collect coins to score points.
+- **Customizable Characters:** Choose from different astronaut characters.
+- **Multiple Backgrounds:** Select from various space-themed backgrounds.
+- **Leaderboard:** High scores are recorded and displayed in the main menu.
+- **Pause Menu:** Pause the game to adjust settings or return to the main menu.
+- **Volume Control:** Adjust the game's music volume.
 
 ## Installation
-1. **Download and Install Processing:**
-   - Download Processing from the [official website](https://processing.org/download/) and follow the installation instructions for your operating system.
+
+1. **Download Processing:**
+   - Ensure you have Processing installed on your computer. You can download it from [Processing.org](https://processing.org/download/).
 
 2. **Clone the Repository:**
-   ```sh
-   git clone <repository-url>
-   cd <repository-directory>
-   ```
+   - Open your terminal or command prompt.
+   - Clone the repository using the following command:
+     ```
+     git clone https://github.com/yourusername/space-dodge.git
+     ```
 
 3. **Open the Project in Processing:**
-   - Launch the Processing IDE.
-   - Open the main `.pde` file from the cloned repository.
+   - Launch Processing.
+   - Open the `space-dodge` folder and then open the main `.pde` file.
 
-4. **Run the Sketch:**
-   - Click the "Run" button in the Processing IDE to start the game.
+4. **Add Sound Library:**
+   - In Processing, go to `Sketch -> Import Library -> Add Library...`.
+   - Search for `Sound` and install the library.
 
-## Usage
+## How to Play
+
 1. **Main Menu:**
-   - Use the UP and DOWN arrow keys to navigate the menu options.
-   - Press ENTER to select an option.
-   - Press 'M' to mute or unmute the background music.
+   - Use the `UP` and `DOWN` arrow keys to navigate through the menu.
+   - Press `ENTER` to select an option.
+   - Press `M` to mute/unmute the game music.
 
-2. **Game Controls:**
-   - Use the LEFT and RIGHT arrow keys to move the astronaut.
-   - Press SPACE to pause or resume the game.
-   
-3. **Configuration:**
-   - In the configuration menu, use the arrow keys to select characters and backgrounds.
-   - Adjust the volume using the LEFT and RIGHT arrow keys.
-   - Press ENTER to confirm your selections.
+2. **In-Game Controls:**
+   - Use the `LEFT` and `RIGHT` arrow keys to move the astronaut.
+   - Press `SPACE` to pause the game.
 
-4. **Gameplay:**
-   - Avoid meteors falling from the top of the screen.
+3. **Gameplay:**
+   - Avoid incoming meteors to stay alive.
    - Collect coins to increase your score.
-   - The game difficulty increases with higher scores.
+   - The game becomes more challenging as you progress through higher levels.
 
-## Code Overview
-The game is structured into several key sections:
+## Customization
 
-- **Setup and Draw:**
-  - `setup()`: Initializes the game, loads images and sounds, and sets up initial configurations.
-  - `draw()`: The main game loop that updates the game state and renders graphics.
+### Characters
 
-- **Key Presses:**
-  - `keyPressed()`: Handles keyboard input for navigating menus and controlling the game.
-  - `keyReleased()`: Resets movement flags when keys are released.
+- You can customize your character by selecting from different astronaut images.
+- Add new character images to the `data` folder and update the code to include them.
 
-- **Collision Detection:**
-  - `colisionChecker()`: Checks for collisions between the astronaut and meteors.
-  - `coin_collet()`: Checks for collisions between the astronaut and coins.
+### Backgrounds
 
-- **Game Functions:**
-  - `generate_meteor()`, `add_more_meteor_1()`, `add_more_meteor_2()`, `add_coin()`: Functions for generating and managing meteors and coins.
-  - `reset()`: Resets the game state after a collision.
+- Choose from multiple backgrounds in the settings menu.
+- Add new background images to the `data` folder and update the code to include them.
 
-## Classes Overview
+## Contributing
 
-### ASTRO
-Manages the astronaut character, including movement and rendering.
-
-### METEOR
-Represents meteors that the astronaut must avoid. Includes movement and collision detection.
-
-### COIN
-Represents coins that the astronaut can collect to increase the score.
-
-### PLAYER
-Holds player data, including the name and score. Used for high score tracking.
+Contributions are welcome! If you have suggestions for improvements or new features, feel free to fork the repository and submit a pull request.
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
+
+## Credits
+
+- Developed by [Your Name]
+- Thanks to the Processing community for their support and resources.
+
+---
+
+Enjoy playing Space Dodge and aim for the highest score!
+
